@@ -1,0 +1,236 @@
+
+@font-face {
+	font-family: 'OpenSans';
+	src: url('../font/OpenSansCondensed-Bold.ttf');
+  }
+  
+  @font-face {
+	font-family: 'OpenSans-light';
+	src: url('../font/OpenSansCondensed-Light.ttf');
+  }
+  
+  * {
+	padding: 0;
+	margin: 0;
+	font-family: OpenSans;
+  }
+  
+  body {
+	width: 100%;
+	height: 100vh;
+	background-image: url('../img/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+  }
+	
+  .text-danger {
+	  margin-top: 5px;
+	  color: white;
+	  background-color: red;
+  }
+  .kosong {
+	width: 100%;
+	/* height: 100%; */
+	background-color: rgba(255, 255, 255, .1);
+	position: absolute;
+	background-attachment: fixed;	
+	z-index: -1;
+  }
+  
+  .container {
+	width: 80%;
+	margin: 0 auto;
+  }
+  
+  nav {
+	background-color: #D4D8D5;
+	padding: 20px;
+	position: relative;
+	/* ganti nol jika lu ingin mentok navbar nya */
+	top: 2rem;
+  }
+  
+  nav .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  nav .brand {
+	font-size: 25px;
+	color: #141416;
+  }
+  
+  nav ul {
+	display: flex;
+	justify-content: space-evenly;
+	width: 40rem;
+  }
+  
+  nav ul li {
+	list-style: none;
+  }
+  
+  nav ul li a {
+	text-decoration: none;
+	color: inherit;
+  }
+  
+  .konten {
+	/* jika navbar lu buat mentok, ini nya atur biar gaterlalu jauh */
+	margin-top: 3.89rem;
+	margin-left: 4rem;
+  
+  }
+  
+  .konten .judul {
+	font-size: 2rem;
+	margin-bottom: 1.9rem;
+  }
+  
+  .center {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  }
+  
+  .center h1 {
+	font-size: 50px;
+	text-transform: uppercase;
+	color: #141416;
+	letter-spacing: .5rem;
+  }
+  
+  .center p {
+	font-size: 25px;
+	font-family: 'OpenSans-light', serif;
+	font-weight: 900;
+	letter-spacing: 2px;
+	color: #141416;
+	margin: 10px;
+  }
+  
+  .center form {
+	padding-top: 10px;
+  }
+
+  .success {
+	  background-color: royalblue;
+	  padding: 10px;
+	  color: white;
+	  border-radius: 5px;
+  }
+
+  .danger {
+	  background-color: red;
+	  padding: 10px;
+	  color: white;
+	  border-radius: 5px;
+  }
+
+  .back-btn{
+  	color:white;
+  	background-color:black;
+  	padding:5px;
+  	border-radius:5px;
+  	text-decoration:none
+  }
+
+  .form-group {
+	margin: 10px;
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	flex-direction: column;
+  }
+  
+  .form-control {
+	/* nah padding ini pak */
+	padding: 10px;
+	border-radius: 3px;
+	outline: none;
+	border: none;
+  }
+  
+  .btn-group {
+	display: flex;
+  }
+  
+  .btn {
+	width: 130px;
+	height: 50px;
+	background-color: #141416;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: #ece1e1;
+	border-radius: 3px;
+	text-transform: uppercase;
+  }
+  
+  .btn:nth-child(odd)
+  {
+	  background-color: aquamarine;
+	  color: black;
+	  border-color: aquamarine;
+
+  }
+  .btn:nth-child(odd) a
+  {
+	  color: black;
+
+
+  }
+  
+  .btn-radius {
+	border-radius: 3rem;
+  }
+  
+  .btn a {
+	text-decoration: none;
+	color: #ece1e1;
+	font-size: 1.2rem;
+	text-transform: none;
+  }
+  
+  .submit {
+	width: 60px;
+	height: 40px;
+	background-color: #141416;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	text-decoration: none;
+	font-size: 1rem;
+	color: #ece1e1;
+	border-radius: 3px;
+	text-transform: uppercase;
+	cursor: pointer;
+  }
+
+  .card {
+	/* Add shadows to create the "card" effect */
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .card-body {
+	padding: 20px;
+  }
+  
