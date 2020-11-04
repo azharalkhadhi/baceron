@@ -1,16 +1,38 @@
-<!-- awal konten -->
-<section class="konten">
-  <div class="container">
-    <h3 class="judul"> Daftar Cerita Kategori : <?= $kategori['nama_kategori']; ?> </h3>
-    <div class="btn-group">
-
-      <?php foreach ($cerita as $crt) : ?>
-      <button class="btn btn-radius">
-        <a href="<?= base_url('kategori/bacaCerita/' . $crt['id']); ?>"><?= $crt['judul']; ?></a>
-      </button>
-      <?php endforeach; ?>
-
+<div class="container mt-5">
+  <div class="row mb-3">
+    <div class="col-md-12 col">
+      <h3 class=" text-bold text-uppercase">Daftar Cerita Kategori : <?= $kategori['nama_kategori']; ?></h3>
+      <a href="<?= base_url('admin'); ?>" class="btn btn-primary">Kembali</a>
     </div>
   </div>
-</section>
-<!-- akhir konten -->   
+
+  <div class="row">
+    <?php foreach ($cerita as $crt) : ?>
+      <div class="col-md-3 col-sm-4 col">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-bold text-uppercase"><?= $crt['judul']; ?></h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              Penulis :
+              <?php
+              $data = $this->db->get_where('user', ['id_user' => $crt['penulis']])->row_array();
+              echo $data['username'];
+              ?>
+            </h6>
+            <!-- <div class="text-truncate card-text mb-2">
+              <?= $crt['isi']; ?>
+            </div> -->
+
+            <a href="<?= base_url('kategori/bacacerita/') . $crt['id']; ?>" class="btn btn-primary">Baca</a>
+          </div>
+        </div>
+      </div>
+    <?php endforeach; ?>
+
+    <!-- <div class="col-md-12 col">
+      <?php foreach ($cerita as $crt) : ?>
+        <a href="<?= base_url('kategori/daftarcerita/') . $crt['id']; ?>" class="btn btn-primary"><?= $crt['judul']; ?></a>
+      <?php endforeach; ?>
+    </div> -->
+  </div>
+</div>

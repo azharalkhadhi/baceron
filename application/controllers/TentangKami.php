@@ -7,7 +7,7 @@ class TentangKami extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Tentang Kami';
-        $data['user'] = $this->db->get_where('user', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $this->load->view('templates/auth_header', $data);
         $this->load->view('templates/navbar', $data);

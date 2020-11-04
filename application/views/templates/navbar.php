@@ -1,26 +1,30 @@
-<!-- awal navbar -->
-<nav>
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container">
-
-        <div class="brand">
-            <h3>BACERON</h3>
+        <a class="navbar-brand text-bold" href="#">BACERON</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <?php if ($user['id_role'] == 1) : ?>
+                    <a href="<?php echo base_url('admin') ?>" class="nav-link">Beranda</a>
+                <?php else : ?>
+                    <a href="<?php echo base_url('user') ?>" class="nav-link">Beranda</a>
+                <?php endif; ?>
+                <a class="nav-link" href="#">Ceritaku</a>
+                <?php if ($user['id_role'] == 1) : ?>
+                    <a class="nav-link" href="#">Daftar Kategori</a>
+                <?php endif; ?>
+                <a class="nav-link" href="<?php echo base_url('tentangkami') ?>">Tentang Kami</a>
+                <div class=" nav-link">
+                    <?= $user['username']; ?>,
+                    <a class="text-muted" href="<?php echo base_url('auth/logout') ?>">
+                        Logout
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <ul>
-            <li>
-                <a href="<?php echo base_url('kategori') ?>">Beranda</a>
-            </li>
-            <li>
-                <a href="#">Ceritaku</a>
-            </li>
-            <li>
-                <a href="<?php echo base_url('tentangkami') ?>">Tentang Kami</a>
-            </li>
-            <li>
-                <?= $user['username']; ?>,
-                <a href="<?php echo base_url('auth/logout') ?>">Logout</a>
-            </li>
-        </ul>
     </div>
 </nav>
-<!-- akhir navbar -->
+<!-- end of navbar -->
