@@ -1,8 +1,9 @@
 <div class="container mt-5">
   <div class="row mb-3">
     <div class="col-md-12 col">
-      <h3 class=" text-bold text-uppercase">Daftar Cerita Kategori : <?= $kategori['nama_kategori']; ?></h3>
-      <a href="<?= base_url('admin'); ?>" class="btn btn-primary">Kembali</a>
+      <h4 class="text-bold text-uppercase title mb-3">Daftar Cerita Kategori : <?= $kategori['nama_kategori']; ?></h4>
+      <a href="<?= base_url('kategori'); ?>" class="btn btn-primary">Kembali</a>
+
     </div>
   </div>
 

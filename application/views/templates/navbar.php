@@ -12,10 +12,12 @@
                 <?php else : ?>
                     <a href="<?php echo base_url('user') ?>" class="nav-link">Beranda</a>
                 <?php endif; ?>
-                <a class="nav-link" href="#">Ceritaku</a>
-                <?php if ($user['id_role'] == 1) : ?>
-                    <a class="nav-link" href="#">Daftar Kategori</a>
-                <?php endif; ?>
+                <a class="nav-link" href="<?= base_url('ceritaku'); ?>">Ceritaku</a>
+
+
+                <a class="nav-link" href="<?= base_url('kategori'); ?>">Kategori</a>
+
+
                 <a class="nav-link" href="<?php echo base_url('tentangkami') ?>">Tentang Kami</a>
                 <div class=" nav-link">
                     <?= $user['username']; ?>,

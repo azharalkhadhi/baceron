@@ -36,7 +36,8 @@ class Auth extends CI_Controller
 		// query builder untuk ngecek username berdasarkan yang kita input
 		// di bawah sama aja kaya SELECT * FROM user WHERE username = $username
 		// row_array() itu fungsinya buat ngambil data hanya sebaris saja
-		$user = $this->db->get_where('user', ['username' => $username])->row_array();
+		// $user = $this->db->get_where('user', ['username' => $username])->row_array();
+		$user = $this->User_model->cekData('username', $username);
 
 		// cek username nya ada atau tidak
 		if ($user) {
@@ -69,7 +70,7 @@ class Auth extends CI_Controller
 
 	public function signUp()
 	{
-		if ($this->session->userdata('id_user')) {
+		if ($this->session->userdata('username')) {
 			redirect('kategori');
 		}
 
@@ -98,22 +99,17 @@ class Auth extends CI_Controller
 			$this->load->view('auth/signup');
 			$this->load->view('templates/auth_footer');
 		} else {
-			$data = [
-				'username' => $this->input->post('username', true),
-				'email' => $this->input->post('email', true),
-				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-				'id_role' => 2,
-			];
+			$this->User_model->daftarAkun($this->input->post());
 
-			$this->db->insert('user', $data);
 			$this->session->set_flashdata('info', '<div class="alert alert-success" role="alert">Registrasi berhasil! silahkan login!</div>');
-			redirect('auth/signin');
+			redirect('auth');
 		}
 	}
 
 	public function logout()
 	{
-		$this->session->unset_userdata('id_user');
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('id_role');
 		redirect('auth');
 	}
 }

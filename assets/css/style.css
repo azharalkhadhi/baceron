@@ -1,24 +1,8 @@
-@font-face {
-	font-family: 'roboto';
-	src: url('../font/Roboto-Regular.ttf') format('truetype');
-	font-weight: 500;
-}
-
-@font-face {
-	font-family: 'roboto';
-	src: url('../font/Roboto-Light.ttf') format('truetype');
-	font-weight: 300;
-}
-
-@font-face {
-	font-family: 'roboto';
-	src: url('../font/Roboto-Bold.ttf') format('truetype');
-	font-weight: 900;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 * {
-	font-family: roboto;
+	font-family: 'Source Sans Pro',
+		sans-serif;
 }
 
 .hv-100 {
@@ -40,13 +24,17 @@ body {
 }
 
 .text-bold {
-	font-weight: 900;
+	font-weight: 800;
 }
 
 .text-cerita {
 	/* text-align: justify !important; */
 	line-height: 2rem;
-	/* font-weight: 300; */
+	font-weight: 600;
+}
+
+.form-group .form-control {
+	background-color: rgba(255, 255, 255, .8) !important;
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
@@ -56,13 +44,30 @@ body {
 
 		display: none !important;
 	}
+
+	.position-fixed {
+		position: relative !important;
+	}
+
+	.title {
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
 }
 
 @media (max-width: 575.98px) {
+	.position-fixed {
+		position: relative !important;
+	}
 
 	#signup,
 	.cover {
 		display: none !important;
+	}
+
+	.title {
+		font-size: 1.3rem;
+		font-weight: 700;
 	}
 }
 

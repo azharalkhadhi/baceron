@@ -9,9 +9,9 @@ class User extends CI_Controller
     $data['kategori'] = $this->db->get_where('kategori')->result_array();
     $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
-    $this->load->view('templates/header');
+    $this->load->view('templates/header', $data);
     $this->load->view('templates/navbar', $data);
-    $this->load->view('admin/index', $data);
+    $this->load->view('beranda', $data);
     $this->load->view('templates/footer');
   }
 }
