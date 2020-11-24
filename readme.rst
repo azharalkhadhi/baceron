@@ -15,3 +15,4 @@ Daftar Kelompok
 - Septiar Bastiningrum   12192502
 - Syifa Amilia Achiriah  12192592
 - Siti Fitoya            12192410
+- Magfirotun Hasanah     12192376
